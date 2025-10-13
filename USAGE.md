@@ -63,6 +63,9 @@ python ternary_e8_logic.py
 # Entropic gravity
 python entropic_gravity.py
 
+# Quantum error correction tests
+python qec_test.py
+
 # Complete example suite
 python example_suite.py
 
@@ -201,7 +204,36 @@ bits = information_bits_on_screen(R_au, M_sun)
 print(f"Information: {bits:.6e} bits")
 ```
 
-### 5. `visualizations.py`
+### 5. `qec_test.py`
+Quantum error correction with trinary repetition codes.
+
+**Key Functions**:
+- `encode_qutrit(data)`: Encode single trit as repetition code
+- `introduce_error(codeword, pos, error_trit)`: Simulate trit-flip error
+- `decode_qutrit(codeword)`: Decode using majority vote
+- `test_qec_no_error()`: Test without errors
+- `test_qec_with_error()`: Test with single-error correction
+- `run_qec_demonstration()`: Comprehensive QEC demo
+
+**Example**:
+```python
+from qec_test import *
+
+# Encode trit
+data = 1
+encoded = encode_qutrit(data)
+print(f"Encoded: {encoded}")  # Output: [1, 1, 1]
+
+# Introduce error
+corrupted = introduce_error(encoded, 0, 2)
+print(f"Corrupted: {corrupted}")  # Output: [2, 1, 1]
+
+# Correct error
+decoded = decode_qutrit(corrupted)
+print(f"Decoded: {decoded}")  # Output: 1 (corrected!)
+```
+
+### 6. `visualizations.py`
 Comprehensive visualization suite.
 
 **Key Functions**:
