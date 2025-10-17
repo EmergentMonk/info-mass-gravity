@@ -1,7 +1,7 @@
 ## Informational Mass Gravity Framework
 
-By Trent Slade & Gary Vetro
-Honorary Co-Contributor: Sabine "Hoff" Hossenfelder
+By Trent Slade, Gary Vetro &
+Honorary Co-Contributor: Sabine "Hoff" Hossenfelder.
 
 A comprehensive Python implementation blending quantum information theory, mass-energy-information equivalence, ternary logic, E8 lattice structures, and entropic gravity.
 
