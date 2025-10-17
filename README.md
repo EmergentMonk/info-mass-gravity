@@ -1,11 +1,7 @@
-# Script to generate updated README.md with full citations and additions
-# Run this in your local env; assumes write access to output file
-
-updated_readme = """# Quantum Info-Mass-Gravity Suite
-
 ## Informational Mass Gravity Framework
 
 By Trent Slade & Gary Vetro
+Honorary Co-Contributor: Sabine "Hoff" Hossenfelder
 
 A comprehensive Python implementation blending quantum information theory, mass-energy-information equivalence, ternary logic, E8 lattice structures, and entropic gravity.
 
@@ -15,7 +11,7 @@ A comprehensive Python implementation blending quantum information theory, mass-
 * Gary Vetro: Informational Mass Gravity Framework (co-developer)
 * Melvin Vopson: Mass-energy-information equivalence principle
 * Erik Verlinde: Entropic gravity and emergent spacetime
-* Sabine Hossenfelder: Critiques and discussions on emergent/entropic gravity (honorary co-contributor)
+* Sabine "Hoff" Hossenfelder: Critiques and discussions on emergent/entropic gravity (honorary co-contributor)
 
 ## Overview
 
