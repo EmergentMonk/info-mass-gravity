@@ -81,6 +81,9 @@ python ternary_e8_logic.py
 # Entropic gravity calculations
 python entropic_gravity.py
 
+# Quantum error correction tests
+python qec_test.py
+
 # Generate all visualizations
 python visualizations.py
 ```
@@ -110,6 +113,13 @@ print(f"Entropic force: {force:.6e} N")
 # E8 structure
 roots = e8_root_system()
 print(f"E8 has {len(roots)} roots")
+
+# Quantum error correction
+from qec_test import encode_qutrit, decode_qutrit, introduce_error
+encoded = encode_qutrit(1)
+corrupted = introduce_error(encoded, 0, 2)
+decoded = decode_qutrit(corrupted)
+print(f"QEC corrected: {decoded == 1}")
 ```
 
 ---
@@ -252,7 +262,7 @@ Run module demonstrations:
 
 ```bash
 # Test all modules
-python -c "import quantum_information; import mass_energy_equivalence; import ternary_e8_logic; import entropic_gravity; import visualizations; print('All modules imported successfully')"
+python -c "import quantum_information; import mass_energy_equivalence; import ternary_e8_logic; import entropic_gravity; import qec_test; import visualizations; print('All modules imported successfully')"
 ```
 
 ---

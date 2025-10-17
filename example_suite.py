@@ -31,6 +31,9 @@ from entropic_gravity import (
     entropic_force, information_bits_on_screen,
     bekenstein_bound, dark_energy_entropic
 )
+from qec_test import (
+    encode_qutrit, decode_qutrit, introduce_error
+)
 
 
 def main():
@@ -129,6 +132,34 @@ def main():
     print(f"   - Optimal sphere packing in 8D")
     
     # ========================================================================
+    # SECTION 3.5: QUANTUM ERROR CORRECTION
+    # ========================================================================
+    print("\n" + "=" * 80)
+    print("SECTION 3.5: QUANTUM ERROR CORRECTION (QEC)")
+    print("=" * 80)
+    
+    print("\n3.5.1 Trinary Repetition Code (Qutrit QEC)")
+    qec_data = 1
+    qec_encoded = encode_qutrit(qec_data)
+    qec_decoded = decode_qutrit(qec_encoded)
+    print(f"   Original trit: {qec_data}")
+    print(f"   Encoded: {qec_encoded}")
+    print(f"   Decoded (no error): {qec_decoded} ✓")
+    
+    print("\n3.5.2 Error Correction Demonstration")
+    qec_corrupted = introduce_error(qec_encoded, 0, 2)
+    qec_corrected = decode_qutrit(qec_corrupted)
+    print(f"   Corrupted codeword: {qec_corrupted}")
+    print(f"   Decoded (with error): {qec_corrected}")
+    print(f"   Correction successful: {qec_corrected == qec_data} ✓")
+    
+    print("\n3.5.3 QEC and Information Theory")
+    print(f"   - Error correction preserves quantum information")
+    print(f"   - Information preservation → mass conservation (Vopson)")
+    print(f"   - Ternary codes extend to higher-dimensional systems")
+    print(f"   - Connection to E8 lattice error correction schemes")
+    
+    # ========================================================================
     # SECTION 4: ENTROPIC GRAVITY
     # ========================================================================
     print("\n" + "=" * 80)
@@ -210,6 +241,7 @@ def main():
     print("  3. Verlinde's Entropic Gravity (F = T × dS/dx)")
     print("  4. Ternary Logic (3-valued extensions)")
     print("  5. E8 Lattice Structures (optimal information geometry)")
+    print("  6. Quantum Error Correction (information preservation)")
     print("\nKey Insight: Information is fundamental to physical reality")
     print("  - Information has mass (Vopson)")
     print("  - Mass creates information gradients")
