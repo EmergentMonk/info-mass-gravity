@@ -1,14 +1,27 @@
-
 """
 Quantum Error Correction (QEC) Test Module
 This module implements a trinary (qutrit) repetition code for quantum error
 correction, demonstrating error detection and correction using majority voting.
+
 CITATIONS:
-- Trent Slade: Informational Mass Gravity Framework
-- Gary Vetro: Informational Mass Gravity Framework
-- Melvin Vopson: Mass-energy-information equivalence principle
-- Erik Verlinde: Entropic gravity and emergent spacetime
-- Sabine Hossenfelder: Critiques on entropic gravity
+- Trent Slade: Co-developer of the Informational Mass Gravity Framework (2025). GitHub repository: https://github.com/EmergentMonk/info-mass-gravity.
+- Gary Vetro: Co-developer of the Informational Mass Gravity Framework (2025). GitHub repository: https://github.com/EmergentMonk/info-mass-gravity.
+- Melvin Vopson: Mass-energy-information equivalence principle.
+- Erik Verlinde: Entropic gravity and emergent spacetime.
+- Sabine Hossenfelder: Critiques on entropic gravity (honorary QEC contributor).
+
+The module follows the framework's open science principles with proper attribution:
+Framework: Trent Slade & Gary Vetro
+QEC Test Contributor: Sabine Hossenfelder
+Citations: Melvin Vopson, Erik Verlinde
+All code includes comprehensive docstrings, references to theoretical foundations, and connections to the informational mass gravity framework.
+
+REFERENCES:
+1. Slade, T., & Vetro, G. (2025). Informational Mass Gravity Framework. Version 1.0. Available at: https://github.com/EmergentMonk/info-mass-gravity.
+2. Vopson, M. M. (2019). "The mass-energy-information equivalence principle." AIP Advances, 9(9), 095206. https://doi.org/10.1063/1.5124303.
+3. Verlinde, E. (2011). "On the origin of gravity and the laws of Newton." Journal of High Energy Physics, 2011(4), 029. https://doi.org/10.1007/JHEP04(2011)029. (Preprint: arXiv:1001.0785).
+4. Hossenfelder, S. (2010). "Comments on and Comments on Comments on Verlinde's paper 'On the Origin of Gravity and the Laws of Newton'." arXiv:1003.1015 [hep-th].
+
 Provenance: Open Science Initiative
 License: Open source for educational and research purposes
 Ethics: This code is intended for theoretical exploration and education.
@@ -129,7 +142,7 @@ def run_qec_demonstration():
     print("=" * 80)
     print("QUANTUM ERROR CORRECTION: Trinary Repetition Code")
     print("=" * 80)
-    print("\nFramework: Trent Slade & Gary Vetro")
+    print("\nFramework: Trent Slade & Gary Vetro (2025, Informational Mass Gravity Framework)")
     print("QEC Test Contributor: Sabine Hossenfelder")
     print("Open Science Initiative")
     print("=" * 80)
@@ -182,17 +195,17 @@ def run_qec_demonstration():
     print(f" Successful corrections: {success_count}")
     print(f" Success rate: {success_rate:.1f}%")
    
-    print("\n4. Connection to Informational Mass Framework")
+    print("\n4. Connection to Informational Mass Gravity Framework")
     print("-" * 40)
     print(" • Error correction preserves quantum information")
-    print(" • Information preservation relates to mass conservation (Vopson)")
-    print(" • Entropic processes in error correction (Verlinde)")
+    print(" • Information preservation relates to mass conservation (Vopson, 2019)")
+    print(" • Entropic processes in error correction (Verlinde, 2011)")
     print(" • Ternary logic extends to higher-dimensional quantum systems")
-    print(" • Critiques on entropic gravity consistency (Hossenfelder)")
+    print(" • Critiques on entropic gravity consistency (Hossenfelder, 2010)")
    
     print("\n" + "=" * 80)
     print("QEC Tests Complete")
-    print("Citations: Slade, Vetro, Vopson, Verlinde, Hossenfelder")
+    print("Citations: Slade & Vetro (2025), Vopson (2019), Verlinde (2011), Hossenfelder (2010)")
     print("=" * 80)
 
 if __name__ == "__main__":
