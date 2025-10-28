@@ -96,6 +96,11 @@ parse_args() {
                 ;;
             --retry-count=*)
                 RETRY_COUNT="${1#*=}"
+                # Validate retry count is a positive integer
+                if ! [[ "$RETRY_COUNT" =~ ^[1-9][0-9]*$ ]]; then
+                    log "ERROR" "Invalid retry count: $RETRY_COUNT. Must be a positive integer."
+                    exit 1
+                fi
                 shift
                 ;;
             --verbose)
@@ -187,7 +192,11 @@ get_repo_list() {
     # Use gh to get repository list, with error handling
     if repos=$(gh repo list "$org" --limit 200 --json name -q '.[].name' 2>/dev/null); then
         local repo_count
-        repo_count=$(echo "$repos" | wc -l)
+        if [[ -z "$repos" ]]; then
+            repo_count=0
+        else
+            repo_count=$(echo "$repos" | wc -l)
+        fi
         log "INFO" "Found $repo_count repositories in $org"
         echo "$repos"
     else
@@ -287,9 +296,12 @@ process_repository() {
         # Add build remote if it doesn't exist
         if ! git remote get-url build &>/dev/null; then
             log "DEBUG" "Adding build remote..."
-            git remote add build "git@github.com:$ORG_BUILD/$repo.git" || {
-                log "WARN" "Failed to add build remote, it may already exist"
-            }
+            if ! git remote add build "git@github.com:$ORG_BUILD/$repo.git"; then
+                log "WARN" "Failed to add build remote for unknown reason"
+            fi
+        else
+            log "DEBUG" "Build remote already exists, updating URL..."
+            git remote set-url build "git@github.com:$ORG_BUILD/$repo.git"
         fi
         
         # Push to build organization as BUILD branch
