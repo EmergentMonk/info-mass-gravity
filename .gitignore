@@ -41,3 +41,6 @@ Thumbs.db
 *.bak
 *.swp
 *~
+
+# Repository synchronization mirror directory
+repo_mirror/
